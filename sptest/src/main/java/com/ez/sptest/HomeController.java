@@ -24,14 +24,14 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		//by ȫ�浿 2020-01-03 17:21
+		//by hong 2020-01-03 17:21
 		logger.info("Welcome home!!!!!!!!! The client locale is {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
 		String formattedDate = dateFormat.format(date);
-		
+		//model
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "home";
